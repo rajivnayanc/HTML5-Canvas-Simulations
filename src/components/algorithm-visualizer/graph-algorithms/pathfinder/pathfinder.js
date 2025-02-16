@@ -1,9 +1,28 @@
 import React, { Component } from 'react';
-import CreateTable from './components/CreateTable';
-const RecursiveDivision = require('./components/algorithms/RecursiveDivsion');
-const DFSBased = require('./components/algorithms/DFSbasedMazeGenerator');
 
-class PathVisualizor extends Component {
+const RecursiveDivision = require('../../../../utils/algorithms/RecursiveDivsion');
+const DFSBased = require('../../../../utils/algorithms/DFSbasedMazeGenerator');
+
+const CreateTable = (props) => {
+    console.log("Rendered Table");
+    const rows = props.rows;
+    const columns = props.columns;
+    const styles = props.styles;;
+    let results = [];
+    const grid = props.grid;
+    for(let i =0;i<rows;i++){
+        var col = []
+        for(let j=0;j<columns;j++){
+            let cls = grid[i][j]===1?` ${styles["animated-wall"]}`:'';
+            col.push(<td onClick={(e)=>props.clickCell(i,j)} className={`${styles.cell}${cls}`} key={`${i}${j}`} id={`${i}-${j}`}></td>)
+        }
+        results.push(<tr key={`${i}`} id={`${i}`}>{col}</tr>)
+    }
+    var table = <div id={styles.grid} className={styles["no-margin"]}><table cellSpacing="0"><tbody>{results}</tbody></table></div>
+    return table;
+}
+
+export default class PathVisualizor extends Component {
     constructor(props) {
         super(props);
         let cell_width = 15;
@@ -32,6 +51,7 @@ class PathVisualizor extends Component {
         this.animateGrid = [];
         this.styles = props.styles
     };
+
     updateGrid = (row, column, value) => {
         let new_arr = this.state.grid;
         new_arr[row][column] = value;
@@ -134,7 +154,7 @@ class PathVisualizor extends Component {
                 }
                 let x = board.nodes[index][0];
                 let y = board.nodes[index][1];
-                var cell = document.getElementById(`${x}-${y}`);
+                let cell = document.getElementById(`${x}-${y}`);
                 cell.className = `${this.styles.cell} ${this.styles['animated-wall']}`;
                 timeout(resolve, index + 1);
             }, this.animation_speed)
@@ -183,5 +203,3 @@ class PathVisualizor extends Component {
         );
     }
 }
-
-export default PathVisualizor;

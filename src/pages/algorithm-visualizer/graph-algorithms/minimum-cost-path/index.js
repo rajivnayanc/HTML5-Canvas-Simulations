@@ -1,6 +1,6 @@
 import { useId, useState } from "react";
-import Queue from "./Queue.src";
 import styles from './page.module.css'
+const Queue = require('./Queue.src')
 
 const solve = (grid, handleUpdatingSelectedCell) => {
     const n_rows = grid.length;

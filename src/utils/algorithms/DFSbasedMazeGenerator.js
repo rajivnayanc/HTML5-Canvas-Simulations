@@ -2,8 +2,8 @@ const generateMazeUtil = (board, vis, x, y, prev, rows, columns) => {
     if (x < 0 || x >= rows || y < 0 || y >= columns) return;
     if (vis[x][y] !== 1) {
         vis[x][y] = 1;
-        var x_prev = Math.floor((x + prev.x) / 2);
-        var y_prev = Math.floor((y + prev.y) / 2);
+        let x_prev = Math.floor((x + prev.x) / 2);
+        let y_prev = Math.floor((y + prev.y) / 2);
         board.content[x][y] = 1;
         board.content[x_prev][y_prev] = 1;
         board.nodes.push([x_prev, y_prev]);
