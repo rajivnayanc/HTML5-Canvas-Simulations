@@ -8,7 +8,7 @@ export default function Home() {
       <li><Link href="/algorithm-visualizer">Algorithm Visualizers</Link></li>
       <li><Link href="/html5-animations">HTML5 Animations</Link></li>
       <li><Link href="/gravity-simulator">Planetery Gravity Simulation</Link></li>
-      <li><Link href="/Pendulum Simulations">Pendulum Simulation</Link></li>
+      <li><Link href="/pendulum-simulator">Pendulum Simulation</Link></li>
     </ul>
   )
 }
