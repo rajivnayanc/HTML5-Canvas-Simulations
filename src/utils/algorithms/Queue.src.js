@@ -14,19 +14,19 @@ http://creativecommons.org/publicdomain/zero/1.0/legalcode
 /* Creates a new queue. A queue is a first-in-first-out (FIFO) data structure -
  * items are added to the end of the queue and removed from the front.
  */
-const Queue = () => {
+function Queue(){
 
   // initialise the queue and offset
-  Queue.queue = Array();
-  Queue.offset = 0;
+  this.queue = Array();
+  this.offset = 0;
 
   // Returns the length of the queue.
-  Queue.getLength = function(){
+  this.getLength = function(){
     return (queue.length - offset);
   }
 
   // Returns true if the queue is empty, and false otherwise.
-  Queue.isEmpty = () => {
+  this.isEmpty = () => {
     return (this.queue.length == 0);
   }
 
@@ -34,14 +34,14 @@ const Queue = () => {
    *
    * item - the item to enqueue
    */
-  Queue.enqueue = (item) => {
+  this.enqueue = (item) => {
     this.queue.push(item);
   }
 
   /* Dequeues an item and returns it. If the queue is empty, the value
    * 'undefined' is returned.
    */
-  Queue.dequeue = () => {
+  this.dequeue = () => {
 
     // if the queue is empty, return immediately
     if (this.queue.length == 0) return undefined;
@@ -51,7 +51,7 @@ const Queue = () => {
 
     // increment the offset and remove the free space if necessary
     if (++this.offset * 2 >= this.queue.length) {
-      this.queue = this.queue.slice(offset);
+      this.queue = this.queue.slice(this.offset);
       this.offset = 0;
     }
 
@@ -63,8 +63,8 @@ const Queue = () => {
   /* Returns the item at the front of the queue (without dequeuing it). If the
    * queue is empty then undefined is returned.
    */
-  Queue.peek = () => {
-    return (this.queue.length > 0 ? this.queue[offset] : undefined);
+  this.peek = () => {
+    return (this.queue.length > 0 ? this.queue[this.offset] : undefined);
   }
 
 };
