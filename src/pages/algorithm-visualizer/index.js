@@ -4,9 +4,14 @@ import { usePathname } from "next/navigation";
 const AlgorithmVisualizer = () => {
     const pathname = usePathname();
     return (
-        <ul>
-            <li><Link href={`${pathname}/graph-algorithms`}>Graph Algorithm</Link></li>
-        </ul>
+        <center>
+            <h1>Algorithm Visualizers</h1>
+            <br></br>
+            <br></br>
+            <ul>
+                <li><Link href={`${pathname}/graph-algorithms`}>Graph Algorithm</Link></li>
+            </ul>
+        </center>
     )
 }
 

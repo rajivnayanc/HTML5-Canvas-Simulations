@@ -6,6 +6,8 @@ const Html5Animations = () => {
     return (
         <center>
             <h1>HTML5 Canvas Animations</h1>
+            <br></br>
+            <br></br>
             <ul>
                 <li><Link href={`${pathname}/rings-of-fire`}>Rings of Fire</Link></li>
                 <li><Link href={`${pathname}/shooting-stars`}>Shooting Stars</Link></li>
