@@ -30,3 +30,14 @@
 .card h3 {
     margin: 0;
 }
+
+#myCanvas {
+    position: absolute;
+    border: 1px solid black;
+    background: white;
+    overflow: hidden;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
