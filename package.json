@@ -1,7 +1,7 @@
 {
-  "name": "html5-canvas-simulations",
-  "version": "0.1.0",
-  "homepage": "https://rajivnayanc.github.io/HTML5-Canvas-Simulations",
+  "name": "simulations",
+  "version": "1.0.0",
+  "homepage": "https://simulations.rajivnayanc.com",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
