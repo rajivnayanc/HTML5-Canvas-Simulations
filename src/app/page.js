@@ -5,9 +5,9 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
-        <h1 className={styles.title}>HTML5 Canvas Simulations</h1>
+        <h1 className={styles.title}>Awesome Simulations</h1>
         <p className={styles.subtitle}>
-          A collection of interactive simulations and animations built with HTML5 Canvas.
+          A collection of awesome simulations, animations, and experiments.
         </p>
       </div>
 
